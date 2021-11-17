@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 1. Створити масив з 10 чисел (можна використовувати Math.random Та Math.floor). Скласти результат цих чисел в змінній result.
+              let num = [1,2,3,4,5,6,7,8,9,10];
+              let result = num.length;
+              console.log(result);
+
+    // 2. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр
+                let book = [
+                    {name: 'harry potter', page:'600',genre: 'fantasy'},
+                    {name: 'mirical morning', page:'300',genre: 'adventure'},
+                    {name: 'Stiv Jobs', page:'800',genre: 'biography'}
+                ];
+            console.log(book[0])
+            console.log(book[2].genre)
+
+    // 3. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр, автори
+            let books = [
+                //замінив перемінну бо помилка видає через повтор
+                {
+                    name: 'harry potter',
+                    page:'600',
+                    genre: 'fantasy',
+                    author: 'Rolling'
+                },
+                {
+                    name: 'mirical morning',
+                    page:'409',
+                    genre: 'adventure',
+                    author: 'John'
+                },
+                {
+                    name: 'Stiv Jobs',
+                    page:'790',
+                    genre: 'biography',
+                    author: 'Wolter'
+                }
+            ];
+            console.log(books)
+
+    // 4. Створити маис об'єктів book з наступними полями  - назва, кількість сторінок, жанр, автори. Вивести кожну книгу як окремий об'єкт
+
+    let onlybook = [
+        //замінив перемінну бо помилка видає через повтор
+        {
+            name: 'harry potter',
+            page:'600',
+            genre: 'fantasy',
+            author: 'Rolling'
+        },
+        {
+            name: 'mirical morning',
+            page:'409',
+            genre: 'adventure',
+            author: 'John'
+        },
+        {
+            name: 'Stiv Jobs',
+            page:'790',
+            genre: 'biography',
+            author: 'Wolter'
+        }
+    ];
+    console.log(onlybook[0].name);
+    console.log(onlybook[1].name);
+    console.log(onlybook[2].name);
+
+
+    // 5. Напишіть код, який вираховує площу прямокутника висотою 23см. (змінна height) та шириною 10см (змінна width).
+    // Значення площі зберігати в змінній s.
+        let height = 23;
+        let width = 10;
+        let s = height * width;
+        console.log(s)
+
+    // 6. Напиши код, який знаходить об'єм циліндра заввишки 10м (змінна heightC) та діаметром основи 4м (dC),
+    // результат помістіть у змінну v.
+        let heightC = 10;
+        let dC = 4;
+        let v = Math.pow(heightC,2) * dC
+    console.log(v)
+
+    // 7. У прямокутного трикутника дві сторони n (зі значенням 3) та m (зі значенням 4).
+    // Знайдіть гіпотенузу k за теоремою Піфагора (потрібно використовувати функцію Math.pow (число, ступінь) або оператор зведення в ступінь **).
+
+        let n = 3;
+        let m = 4
+        let k = n ** 2 + m ** 2;
+        console.log(k)
+
+</script>
+
+</body>
+</html>
