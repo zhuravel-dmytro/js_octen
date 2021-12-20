@@ -47,6 +47,20 @@
  }
  console.log(Client)
 // створити пустий масив, наповнити його 10 об'єктами Client
-
+let ClientArr = [
+    new Client( 10,'Dimas',"Zhuravel","zhuravel@gmail.com","+380935184413",['macbook','iphone','airpods','whiskey']),
+    new Client( 23,'Vasia',"Vasok","Vasok@gmail.com","+380939364416",['vine','iphoneX','bookHarryPotter']),
+    new Client( 3,'Olga',"Trofimuk","Trofimuk@gmail.com","+380935588915",['macbook','iphone','airpods','whiskey']),
+    new Client( 4,'Oleg',"Sus","Sus@gmail.com","+380935589573",['samsungGalaxy']),
+    new Client( 56,'Andrey',"Turkevuch","Turkevuch@gmail.com","+380946186615",['macbook','HomePod',]),
+    new Client( 7,'Stepan',"Pavluk","Pavluk@gmail.com","+380935346457",['macbook','iphone']),
+    new Client( 18,'Tamara',"Nikolska","Nikolska@gmail.com","+380935484486",['macbook','iphone','airpods']),
+    new Client( 8,'Pavlo',"Zhuravlov","Zhuravlov@gmail.com","+380245184414",['iphone']),
+    new Client( 1,'Inna',"Semenchuk","Semenchuk@gmail.com","+380935186722",['iphone','airpods']),
+    new Client( 66,'Yura',"Merkyriev","Merkyriev@gmail.com","+380934584411",['iphone','whiskey']),
+];
+console.log(ClientArr)
 
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+       let sortOrder =  ClientArr.sort((a,b)=> a.order.length - b.order.length);
+        console.log(sortOrder)
