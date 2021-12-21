@@ -117,8 +117,17 @@
                 this.findshoe = findshoe;
             }
         }
-        let Prince = new PrinceClass (Andean,25,34)
+        let Prince = new PrinceClass ('Andean',25,34)
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
-
+           let couple = function (CinderellaArrow,Prince){
+            for (let i of CinderellaArrow){
+                if ( i.size === Prince.findshoe){
+                 return  `your princes is ${i.name}`
+                }
+           }
+};
+        console.log(couple(CinderellaArrow,Prince))
 
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+        let Princess = CinderellaArrow.find((size) => size.size === Prince.findshoe);
+        console.log(`your princes is ${Princess.name}`)
