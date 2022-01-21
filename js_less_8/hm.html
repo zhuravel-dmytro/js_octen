@@ -30,6 +30,51 @@
 </ul>
 
 
+<script>
+    // Візьміть файл template1.html, підключіть до нього скрипт, і працюйте в ньому!
+    //
+    // - Напишіть код,  котрий :
+    // -- отримує текст з параграфа з id "content"
+    let id = document.getElementById('content');
+    // -- отримує текст з блоку з id "rules"
+    let rulesID = document.getElementById('rules');
+    // -- замініть текст параграфа з id 'content' на будь-який інший
+        id.innerText = 'inner text here'
+    // -- замініть текст параграфа з id 'rules' на будь-який інший
+        rulesID.innerText = 'inner text for id rules'
+    // -- змініть кожному елементу колір фону на червоний
+    // let div = document.getElementsByTagName('div');
+    //     for (d of div){
+    //         d.style.backgroundColor = 'red';
+    //     }
+    // let ul = document.getElementsByTagName('ul');
+    // for (u of ul){
+    //     u.style.backgroundColor = 'red';
+    // }
+    // let p = document.getElementsByTagName('p');
+    // for (p of p){
+    //     p.style.backgroundColor = 'red';
+    // }
+    // -- змініть кожному елементу колір тексту на синій
+    let div = document.getElementsByTagName('div');
+    for (d of div){
+        d.style.backgroundColor = 'blue';
+    }
+    let ul = document.getElementsByTagName('ul');
+    for (u of ul){
+        u.style.backgroundColor = 'blue';
+    }
+    let p = document.getElementsByTagName('p');
+    for (p of p){
+        p.style.backgroundColor = 'blue';
+    }
+    // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
+            let AllList = rulesID.classList;
+            console.log(AllList)
+    // -- поміняти колір тексту у всіх елементів fc_rules на червоний
+         let rulesClass = document.getElementsByClassName('fc_rules');
+            for (a of rulesClass){}
 
+</script>
 </body>
 </html>

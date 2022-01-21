@@ -34,8 +34,11 @@ for(a of allLink){
 };
 // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
 
-//  let allLinks = document.getElementsByTagName('a');
-//       for(a of allLinks) {}
+let tagA = document.getElementsByTagName('a');
+let name = 'lskajgdl';
+for(a of tagA) {
+    a.classList.add(name);
+}
 
 
 // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
@@ -52,7 +55,11 @@ for( s of sub2) {
     }
 }
 // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
-
+let TextForContent1 = prompt('введіть текст')
+let content1 = document.getElementsByClassName('content_1');
+for(text of content1) {
+    text.innerText = TextForContent1;
+}
 // l) отримати елементи p та змінити їм padding на 20px
 let changePaddinng = document.getElementsByTagName('p');
 for(p of changePaddinng) {
