@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td{
+        border: 1px solid black;
+    }
+    .btnBlock2{
+        padding: 5px;
+        margin: 0 auto;
+        margin-top: 5px;
+        display: flex;
+    }
+    #allBlock{
+        display: flex;
+    }
+    #block1, #block2, #block3, #block4{
+        background-color: #cccccc;
+        width: 343px;
+        height: 250px;
+        margin-left: 10px;
+        padding: 10px;
+    }
+</style>
+<body>
+<div id="allBlock">
+    <div id="block1"></div>
+    <div id="block2"></div>
+    <div id="block3"></div>
+    <div id="block4"></div>
+</div>
+<script>
+    // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
+    //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
+    // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+
+        let block1 = document.getElementById('block1');
+
+
+        let FormOne = document.createElement('form');
+        let inpOne1 = document.createElement('input');
+        let inpOne2 = document.createElement('input');
+        let FormTwo = document.createElement('form');
+        let inpTwo1 = document.createElement('input');
+        let inpTwo2 = document.createElement('input');
+        let btn = document.createElement('button')
+            btn.style.width = '100px';
+            btn.innerText = 'вивести в консоль';
+            btn.style.marginTop = '20px';
+
+            btn.onclick = function (){
+                console.log(inpOne1.value, inpOne2.value, inpTwo1.value, inpTwo2.value)
+            };
+
+        block1.appendChild(FormOne);
+        block1.appendChild(inpOne1);
+        block1.appendChild(inpOne2);
+        block1.appendChild(FormTwo);
+        block1.appendChild(inpTwo1);
+        block1.appendChild(inpTwo2);
+        block1.appendChild(btn);
+
+
+
+
+    // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+    // (Додатковачастина для завдання)
+        let block2 = document.getElementById('block2');
+        let p1 = document.createElement('p');
+        p1.innerText = 'визначає кількість рядків';
+        let Input1 = document.createElement('input');
+        let p2 = document.createElement('p');
+        p2.innerText = 'визначає кількість ячеєк';
+        let Input2 = document.createElement('input');
+        let p3 = document.createElement('p');
+        p3.innerText = 'визначає вмиіст ячеєк';
+        let Input3 = document.createElement('input');
+
+        let btnBlock2 = document.createElement('button');
+        btnBlock2.innerText = 'сформувати табличку';
+        btnBlock2.classList.add('btnBlock2');
+
+        btnBlock2.onclick = function (e){
+            e.preventDefault();
+            let table = document.createElement('table');
+            let row = +Input1.value;
+            let column = +Input2.value;
+            let text = Input3.value;
+
+            for (let i = 0; i < row; i++){
+                let tr = document.createElement('tr');
+                table.appendChild(tr);
+                for (let i = 0; i < column; i++){
+                    let td = document.createElement('td');
+                    td.innerText = text;
+                    tr.appendChild(td);
+                }
+            }
+            document.body.appendChild(table);
+        }
+
+        block2.appendChild(p1);
+        block2.appendChild(Input1);
+        block2.appendChild(p2);
+        block2.appendChild(Input2);
+        block2.appendChild(p3);
+        block2.appendChild(Input3);
+        block2.appendChild(btnBlock2);
+
+
+
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів кинути алерт з попередженням.
+    //     Перевірку робити при натисканні на кнопку
+    let block3 = document.getElementById('block3');
+            let foul = ['сука', 'блять', 'ідіот', 'придурок', 'фак'];
+            let InputTxt = document.createElement('input');
+            InputTxt.type = 'text';
+            let btn2 = document.createElement('button')
+            btn2.innerText = 'перевірити слово'
+                btn2.onclick = function (){
+                    let word = InputTxt.value;
+                    for (let item of foul ){
+                        if (word === item){
+                            alert('погане слово');
+                        }
+                    }
+                };
+            block3.appendChild(InputTxt)
+            block3.appendChild(btn2)
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+    //     Кинути алерт з попередженням у випадку якщо містить.
+    //     Перевірку робити при натисканні на кнопку
+    let block4 = document.getElementById('block4');
+    let foul2 = ['сука', 'блять', 'ідіот', 'придурок', 'фак'];
+    let InputTxt2 = document.createElement('input');
+    InputTxt2.type = 'text';
+    let btn3 = document.createElement('button')
+    btn3.innerText = 'перевірити на вміст нецензурних слів'
+    btn3.onclick = function (){
+        let word = InputTxt2.value;
+        for (let item of foul2 ){
+            if (word.includes(item)){
+                alert('містить погане слово');
+            }
+        }
+    };
+    block4.appendChild(InputTxt2)
+    block4.appendChild(btn3)
+</script>
+
+</body>
+</html>

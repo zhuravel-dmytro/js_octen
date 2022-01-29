@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .active{
+        display: none;
+    }
+    ul{
+        list-style-type: none;
+        width: 140px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+    li{
+        border: 1px solid black;
+        padding: 2px;
+        margin-bottom: 2px;
+        cursor: pointer;
+
+    }
+    li:hover{
+       background-color: beige;
+
+    }
+
+    .ection1, .ection2, .ection3, .ection4{
+        margin-bottom: 5px;
+        background-color: #ccc;
+        border: 2px solid #000;
+        text-align: center;
+    }
+    #btn, .buttn{
+       padding: 5px 20px;
+        margin: 20px;
+    }
+    #text {
+        margin: 0 auto;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        display: block;
+    }
+</style>
+<body>
+
+<div class="ection1">
+    <div id="text"></div>
+    <button class="buttn" id="btn">патронус</button>
+</div>
+
+<div class="ection2">
+    <input id="age" type="number" placeholder="вкажіть ваш вік тут">
+    <input type="button" class="buttn" value="перевірка">
+    <p id="p">Доступ до секретних матеріалів, вкажіть ваш вік</p>
+</div>
+<div class="ection3">
+    <input type="button" class="buttn" id="btn3" value="меню відкрити/закрити">
+    <div id="menu">
+        <ul>
+            <li>головна сторінка</li>
+            <li>новини</li>
+            <li>галерея</li>
+            <li>кабінет</li>
+        </ul>
+    </div>
+</div>
+<div class="ection4" id="ection4">
+
+</div>
+<script>
+    // - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
+        ElementText = document.getElementById('text');
+    // - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
+        btn = document.getElementById('btn');
+        btn.onclick = function (){
+            ElementText.style.display = 'none';
+        }
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+        ButtonAge = document.getElementsByClassName('buttn')[1];
+        Age = document.getElementById('age');
+        p = document.getElementById('p');
+        ButtonAge.onclick = function (){
+            if (Age.value > 18){
+               let link = document.createElement('a');
+                link.href = 'https://www.youtube.com/watch?v=12EKKLCwktA&ab_channel=MattKelly';
+                link.innerText = 'перейти';
+                p.innerText = 'перейдіть за посиланням  ' ;
+                p.appendChild(link);
+            } else {
+                p.innerText = 'в доступі відмовлено';
+                p.style.color = 'red'
+            }
+        };
+    // - Создайте меню, которое раскрывается/сворачивается при клике
+        let menu = document.getElementById('menu');
+        let menuBtn = document.getElementById('btn3').onclick = function (){
+            menu.classList.toggle('active');
+    };
+
+    // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
+    //     Вывести список комментариев в документ, каждый в своем блоке.
+    //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+
+        let comments = [
+            {title : 'скарга', body:'lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti'},
+            {title : 'пропозиція', body:'lorem ipsum dolo sit ameti'},
+            {title : 'відгук', body:'lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti'},
+            {title : 'зауваження', body:'lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti'},
+            {title : 'рекомендація', body:'lorem13 lorem ipsum dolo sit ameti'}
+        ];
+
+
+
+
+        for (let coment of comments){
+            let ection4 = document.getElementById('ection4');
+            let containerForArrowComments = document.createElement('div');
+            let h4 = document.createElement('h4');
+            let pForComments = document.createElement('p');
+            let btnForBody = document.createElement('input');
+
+
+            h4.innerText = coment.title;
+            pForComments.innerText = coment.body;
+            btnForBody.type = 'button';
+            btnForBody.value = 'згорнути';
+
+            btnForBody.onclick = function (){
+                pForComments.style.display = 'none';
+
+            }
+
+            containerForArrowComments.appendChild(h4);
+            containerForArrowComments.appendChild(pForComments);
+            containerForArrowComments.appendChild(btnForBody);
+            ection4.appendChild(containerForArrowComments);
+        }
+
+
+
+</script>
+</body>
+</html>
