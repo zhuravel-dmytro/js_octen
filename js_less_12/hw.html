@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <title>less 12</title>
 </head>
+<style>
+    html,body{
+        margin: 0;
+        padding: 0;
+    }
+    .wrap{
+        padding: 5px;
+        background-color: #ccc;
+    }
+    .post{
+        display: flex;
+        background-color: #fff;
+        margin: 5px;
+        padding: 10px 5px;
+        align-items: center;
+    }
+    .post:hover{
+        background-color: rgba(125, 197, 38, 0.13);
+        cursor: pointer;
+    }
+    .userId{
+    min-width: 100px;
+        margin: 4px;
+    }
+    .id{
+       text-align: center;
+        min-width: 50px;
+    }
+
+    .title{
+        min-width: 840px;
+        text-align: center;
+    }
+
+</style>
 <body>
 
 </body>
@@ -12,8 +47,40 @@
     // Отримати відповідь з цього ресурсу відповідь, та вивести в документ об'єкти. Застилізувати, за допомоги css, щоб отримати 5 елементів в рядку.
     // Для кожного елементу свій блок div.post
     // Всі характеристики повинні мати свої блоки всередені div.post
-    // https://jsonplaceholder.typicode.com/posts
-    //
+        let wrap = document.createElement('div');
+            wrap.classList.add('wrap')
+            document.body.appendChild(wrap);
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(posts => posts.json())
+            .then(postsArr => {
+                console.log(postsArr)
+                for (const item of postsArr){
+                    let content = document.createElement('div');
+                    let post = document.createElement('div');
+                        post.classList.add('post')
+                    let userId = document.createElement('div');
+                        userId.classList.add('userId');
+                        userId.innerText = `User ID ${item.userId}`;
+                    let id = document.createElement('div');
+                        id.classList.add('id');
+                        id.innerText = `${item.id}`;
+                    let title = document.createElement('div');
+                        title.classList.add('title');
+                        title.innerText = `${item.title}`;
+                    let body = document.createElement('div');
+                        body.classList.add('body');
+                        body.innerText = `${item.body}`;
+
+
+                    wrap.appendChild(content);
+                    content.appendChild(post);
+                    post.appendChild(userId);
+                    post.appendChild(id);
+                    post.appendChild(title);
+                    post.appendChild(body);
+                }
+            })
+
     //     2.
     // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті.
     //     Для кожного елементу свій блок div.comment
