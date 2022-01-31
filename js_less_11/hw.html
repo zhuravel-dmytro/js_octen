@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>less 11</title>
+</head>
+<style>
+    #div2{
+        background-color: #cccccc;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+</style>
+<body>
+<div id="div2">
+    <h1>завдання 2</h1>
+    <form id="form2">
+        <input type="text" name="model" id="model" placeholder="model">
+        <input type="text" name="type"  id="type" placeholder="type">
+        <input type="text" name="volumee" id=volume"" placeholder="volume">
+</form>
+    <button id="btn2">зберегти</button>
+</div>
+<script>
+  // -створити форму з інпутами для name та age.
+  //         При відправці форми записати об'єкт в localstorage
+    let form = document.createElement('form');
+    let inputOne = document.createElement('input');
+        inputOne.placeholder = 'name';
+    let inputTwo = document.createElement('input');
+        inputTwo.placeholder = 'age';
+    let btn = document.createElement('button');
+        btn.innerText = 'записати об\'єкт в localstorage';
+        btn.style.marginTop = '10px';
+
+        btn.onclick = function (){
+            let name = inputOne.value;
+            let age = inputTwo.value;
+            let obj = [
+                {name: name},
+                {age: age}
+            ]
+
+            localStorage.setItem( name, JSON.stringify(obj));
+        };
+
+
+    form.appendChild(inputOne);
+    form.appendChild(inputTwo);
+    document.body.appendChild(form);
+    document.body.appendChild(btn);
+
+
+  // -створити форму з інпутами для model,type та volume автівки.
+  //         при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
+    let form2 = document.getElementById('form2');
+    let car = 'car specification'
+    let model = document.getElementById('model');
+    let type = document.getElementById('type');
+    let volume = document.getElementById('volume');
+
+    document.getElementById('btn2').onclick = ()=>{
+        let arr = [
+            {model: model.value},
+            {type: type.value},
+            {volume: volume.value},
+        ];
+        localStorage.setItem( car, JSON.stringify(arr));
+    };
+
+</script>
+</body>
+</html>
