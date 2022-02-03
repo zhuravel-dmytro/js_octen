@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-<script>
 //     В index.html
 //     1 получить массив объектов user с endpoint`а https://jsonplaceholder.typicode.com/users
 // 2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(users => users.json())
+    .then(users =>{
+        console.log(users);
+    })
 // 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html, которая имеет детальную информацию про объект на который кликнули
 //
 //
@@ -30,6 +25,3 @@
 // блоки с краткой информацией про post - в ряд по 5 объектов.
 // post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
-
-</script>
-</html>
