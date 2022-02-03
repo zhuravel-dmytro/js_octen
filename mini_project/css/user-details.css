@@ -1,0 +1,30 @@
+.infoBlock{
+    background-color: rgba(208, 207, 207, 0.73);
+    width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.button{
+    background: #f5f5f5;
+    padding: 2px 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.title{
+    background-color: rgba(53, 123, 215, 0.15);
+    cursor: pointer;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #357bd7;
+    margin-top: 10px;
+    padding: 3px;
+}
+.title:hover{
+    background-color: rgba(53, 123, 215, 0.34);
+
+}
