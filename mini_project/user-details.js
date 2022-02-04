@@ -41,6 +41,12 @@ console.log(obj)
                                 let title = document.createElement('div');
                                 title.classList.add('title');
                                 title.innerText = post.body;
+
+                                let btn = document.createElement('a');
+                                    btn.classList.add('button');
+                                    btn.innerText = 'детальніше';
+                                    btn.href = 'post-details.html?post=' + JSON.stringify(post);
+                                title.appendChild(btn);
                                 document.body.appendChild(title)
                             }
                         })
