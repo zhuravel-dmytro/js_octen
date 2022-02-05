@@ -1,0 +1,57 @@
+/*// post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.*/
+/*// Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrap{
+    background: #F6F6FA;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    column-gap: 20px;
+    row-gap: 20px;
+    justify-content: space-between;
+}
+.postBlock{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 0px 10px #5d5d5d;
+
+}
+.InfoPost{
+
+}
+.information{
+
+}
+.bodyComment{
+    padding-bottom: 10px;
+}
+.comments{
+    border: 3px solid #E7ECFF;
+    color: #587BF9;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.PostId{
+    background: #E7ECFF;
+    border-radius: 100%;
+    width: 20px;
+    margin: 0 auto;
+    padding: 4px;
+}

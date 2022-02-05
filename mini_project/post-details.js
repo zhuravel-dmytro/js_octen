@@ -14,24 +14,39 @@
                 console.log(commentsArr);
 
                 let wrap = document.createElement('div');
+                    wrap.classList.add('wrap');
                 for (const comment of commentsArr){
                     let post = document.createElement('div');
+                        post.classList.add('postBlock')
+                    let InfoPost = document.createElement('div');
+                        InfoPost.classList.add('InfoPost');
                     let PostId = document.createElement('div');
+                        PostId.classList.add('information');
+                        PostId.classList.toggle('PostId');
                         PostId.innerText = comment.postId;
                     let id = document.createElement('div');
+                        id.classList.add('information');
                         id.innerText = comment.id;
                     let name = document.createElement('div');
+                        name.classList.add('information');
                         name.innerText = comment.name;
                     let email = document.createElement('div');
+                        email.classList.add('information');
                         email.innerText = comment.email;
                     let body = document.createElement('div');
-                        body.innerText = comment.body;
+                        body.classList.add('bodyComment')
+                    let comments = document.createElement('div');
+                        comments.classList.add('comments')
+                        comments.innerText = comment.body;
 
-                    post.appendChild(PostId);
-                    post.appendChild(id);
-                    post.appendChild(name);
-                    post.appendChild(email);
+
+                    post.appendChild(InfoPost);
+                    InfoPost.appendChild(PostId);
+                    InfoPost.appendChild(id);
+                    InfoPost.appendChild(name);
+                    InfoPost.appendChild(email);
                     post.appendChild(body);
+                    body.appendChild(comments);
                     wrap.appendChild(post);
                 }
 

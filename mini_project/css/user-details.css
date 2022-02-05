@@ -1,29 +1,73 @@
-.infoBlock{
-    background-color: rgba(208, 207, 207, 0.73);
+/*// user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.*/
+/*// блоки с краткой информацией про post - в ряд по 5 объектов.*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrap{
+    background: #F6F6FA;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+h3{
+    color: #587BF9;
+    margin: 0;
+}
+.detailInfo{
     width: 600px;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+p{
+    font-size: 18px;
+}
+.infoBlock{
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 0px 10px #5d5d5d;
 }
 .button{
-    background: #f5f5f5;
-    padding: 2px 5px;
-    border: 1px solid black;
-    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    background: #E7ECFF;
+    color: #587BF9;
+    border-radius: 5px;
     box-sizing: border-box;
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    margin: 0 auto;
+    padding: 15px;
+}
+.button:hover{
+    background: #c5cdef;
+
+}
+
+.WrapTitle{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
 }
 .title{
-    background-color: rgba(53, 123, 215, 0.15);
-    width: 400px;
-    border-radius: 5px;
-    border: 1px solid #357bd7;
-    margin-top: 10px;
-    padding: 3px;
-}
-.title:hover{
-    background-color: rgba(53, 123, 215, 0.34);
+    background: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    box-shadow: 0px 0px 10px #5d5d5d;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
+}
+.btnTitle{
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 2px;
 }

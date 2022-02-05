@@ -1,20 +1,55 @@
-.box{
-    margin-bottom: 5px;
-    padding: 2px;
-    max-width: 30%;
-    justify-content: space-between;
+
+/*// Стилизация проекта -*!*!*/
+/*// index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.*!*!*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    padding: 50px;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.wrap{
+    margin: 0 auto;
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 1000px;
+    background: #F6F6FA;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    width: 400px;
+    box-shadow: 0px 0px 10px #5d5d5d;
+
+}
+.id{
+    width: 50%;
+}
+.divForUser{
+    width: 50%;
 }
 .button{
-    background: #f5f5f5;
-    padding: 2px 5px;
-    border: 1px solid black;
-    border-radius: 3px;
+    background: #E7ECFF;
+    color: #587BF9;
+    border-radius: 5px;
+    text-align: center;
     box-sizing: border-box;
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    width: 100%;
+    margin: 10px;
+    padding: 5px;
 }
 .button:hover{
-    background: #d0cfcf;
+    background: #c5cdef;
+
 }

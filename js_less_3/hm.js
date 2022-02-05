@@ -25,7 +25,7 @@
 //     console.log(arr[2]);
 
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
-//     for (let a = 0; a <10; a++) {
+//     for (let a = 0; a < 10; a++) {
 //         document.write('<div>10 блоків div</div>');
 //     }
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині

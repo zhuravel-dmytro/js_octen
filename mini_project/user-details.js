@@ -7,23 +7,25 @@
 let url = new URL(location.href);
 let DataObject = url.searchParams.get('data');
 let obj = JSON.parse(DataObject);
-console.log(obj)
+        let wrap = document.createElement('div');
+            wrap.classList.add('wrap');
     let detailInfo = document.createElement('div');
-    let h1 = document.createElement('h1');
-        h1.innerText = obj.name;
-    let OneH2 = document.createElement('h2');
-        OneH2.innerText = 'Information';
+        detailInfo.classList.add('detailInfo')
+    let h3 = document.createElement('h3');
+        h3.innerText = `Інформація про ${obj.name}`;
+    let OneP = document.createElement('p');
+        OneP.innerText = 'Information';
         let info = document.createElement('div');
             info.classList.add('infoBlock');
             info.innerText = `id ${obj.id} | name ${obj.name} | username ${obj.username} | email ${obj.email} | website ${obj.website} `;
-        let TwoH2 = document.createElement('h2');
-            TwoH2.innerText = 'Address';
+        let TwoP = document.createElement('p');
+            TwoP.innerText = 'Address';
         let info2 = document.createElement('div');
             info2.classList.add('infoBlock');
             info2.innerText = `city: ${obj.address.city} | street: ${obj.address.street} | suite: ${obj.address.suite} | zipcode: ${obj.address.zipcode}
             geo: ${obj.address.geo.lat} | ${obj.address.geo.lng} `;
-        let ThreeH2 = document.createElement('h2');
-            ThreeH2.innerText = 'Company';
+        let ThreeP = document.createElement('p');
+            ThreeP.innerText = 'Company';
         let info3 = document.createElement('div');
         info3.classList.add('infoBlock');
         info3.innerText = `name: ${obj.company.name} | bs: ${obj.company.bs} | catchPhrase: ${obj.company.catchPhrase} `;
@@ -32,11 +34,14 @@ console.log(obj)
        let btnPost = document.createElement('a');
             btnPost.classList.add('button');
             btnPost.innerText = 'post of current user';
-            btnPost.onclick = (e)=>{
+                    btnPost.onclick = (e)=>{
                 console.log(e)
                     fetch(`https://jsonplaceholder.typicode.com/users/${obj.id}/posts`)
                         .then(posts => posts.json())
                         .then(postsArr =>{
+                            let WrapTitle = document.createElement('div');
+                            WrapTitle.classList.add('WrapTitle');
+                            document.body.appendChild(WrapTitle)
                             for (post of postsArr){
                                 let title = document.createElement('div');
                                 title.classList.add('title');
@@ -44,20 +49,22 @@ console.log(obj)
 
                                 let btn = document.createElement('a');
                                     btn.classList.add('button');
+                                    btn.classList.toggle('btnTitle');
                                     btn.innerText = 'детальніше';
                                     btn.href = 'post-details.html?post=' + JSON.stringify(post);
                                 title.appendChild(btn);
-                                document.body.appendChild(title)
+                                WrapTitle.appendChild(title)
                             }
                         })
 }
 
-    detailInfo.appendChild(h1)
-    detailInfo.appendChild(OneH2)
+    wrap.appendChild(h3)
+    detailInfo.appendChild(OneP)
     detailInfo.appendChild(info)
-    detailInfo.appendChild(TwoH2)
+    detailInfo.appendChild(TwoP)
     detailInfo.appendChild(info2)
-    detailInfo.appendChild(ThreeH2)
+    detailInfo.appendChild(ThreeP)
     detailInfo.appendChild(info3)
-    detailInfo.appendChild(btnPost)
-    document.body.appendChild(detailInfo)
+    wrap.appendChild(detailInfo)
+    wrap.appendChild(btnPost)
+    document.body.appendChild(wrap);
