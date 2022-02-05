@@ -21,7 +21,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 id.innerText = user.id;
 
             let btn = document.createElement('a');
-                btn.href = 'user-details.html?data=' + JSON.stringify(user);
+                btn.href = 'html/user-details.html?data=' + JSON.stringify(user);
                 btn.classList.add('button');
                 btn.innerText = 'детальніше';
 
